@@ -36,6 +36,7 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.vendor="OHDSI"
 LABEL org.opencontainers.image.source="https://github.com/OHDSI/Atlas"
 
+
 # URL where WebAPI can be queried by the client
 ENV USE_DYNAMIC_WEBAPI_URL="false"
 ENV DYNAMIC_WEBAPI_SUFFIX="/WebAPI/"
@@ -137,6 +138,9 @@ ENV ATLAS_ENABLE_TANDCS="true"
 ENV ATLAS_ENABLE_PERSONCOUNT="true"
 ENV ATLAS_ENABLE_TAGGING_SECTION="false"
 ENV ATLAS_REFRESH_TOKEN_THRESHOLD="240"
+
+
+
 
 # Configure webserver
 COPY ./docker/nginx-default.conf /etc/nginx/conf.d/default.conf
