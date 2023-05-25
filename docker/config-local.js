@@ -136,6 +136,5 @@ define([], function () {
 	configLocal.enablePersonCount = ("${ATLAS_ENABLE_PERSONCOUNT}" === "true");
 	configLocal.enableTaggingSection = ("${ATLAS_ENABLE_TAGGING_SECTION}" === "true");
 	configLocal.refreshTokenThreshold = 1000 * 60 * parseInt("${ATLAS_REFRESH_TOKEN_THRESHOLD}");
-
 	return configLocal;
 });

@@ -138,6 +138,9 @@ ENV ATLAS_ENABLE_PERSONCOUNT="true"
 ENV ATLAS_ENABLE_TAGGING_SECTION="false"
 ENV ATLAS_REFRESH_TOKEN_THRESHOLD="240"
 
+ENV WEBAPI_URL=https://ohdsi-webapi-dev.nextgenbmi.umsystem.edu/WebAPI/
+
+
 # Configure webserver
 COPY ./docker/nginx-default.conf /etc/nginx/conf.d/default.conf
 COPY ./docker/optimization.conf /etc/nginx/conf.d/optimization.conf
@@ -153,3 +156,6 @@ COPY --from=builder /code/js /usr/share/nginx/html/atlas/js
 # Load Atlas local config with current user, so it can be modified
 # with env substitution
 COPY --chown=101 docker/config-local.js /usr/share/nginx/html/atlas/js/config-local.js
+
+# DataQuality Dashboard
+COPY --chown=101 /DataQualityDashboard/www/ /usr/share/nginx/html/atlas/dashboard/
