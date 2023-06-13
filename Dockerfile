@@ -140,8 +140,6 @@ ENV ATLAS_ENABLE_TAGGING_SECTION="false"
 ENV ATLAS_REFRESH_TOKEN_THRESHOLD="240"
 
 
-
-
 # Configure webserver
 COPY ./docker/nginx-default.conf /etc/nginx/conf.d/default.conf
 COPY ./docker/optimization.conf /etc/nginx/conf.d/optimization.conf
