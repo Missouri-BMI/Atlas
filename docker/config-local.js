@@ -18,6 +18,7 @@ define([], function () {
 		url: webapi_url
 	};
 
+
 	configLocal.cohortComparisonResultsEnabled = ("${ATLAS_COHORT_COMPARISON_RESULTS_ENABLED}" == "true");
 	configLocal.plpResultsEnabled = ("${ATLAS_PLP_RESULTS_ENABLED}" === "true");
 	configLocal.userAuthenticationEnabled = ("${ATLAS_USER_AUTH_ENABLED}" === "true");
@@ -37,7 +38,6 @@ define([], function () {
 	configLocal.showCompanyInfo = ("${ATLAS_COMPANYINFO_SHOW}" === "true");
 	configLocal.defaultLocale = "${ATLAS_DEFAULT_LOCALE}";
 	configLocal.pollInterval = parseInt("${ATLAS_POLL_INTERVAL}");
-
 
 	if ("${ATLAS_SECURITY_WIN_PROVIDER_ENABLED}" === "true") {
 		configLocal.authProviders.push(openIdProvider = {
