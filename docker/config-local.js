@@ -18,7 +18,6 @@ define([], function () {
 		url: webapi_url
 	};
 
-
 	configLocal.cohortComparisonResultsEnabled = ("${ATLAS_COHORT_COMPARISON_RESULTS_ENABLED}" == "true");
 	configLocal.plpResultsEnabled = ("${ATLAS_PLP_RESULTS_ENABLED}" === "true");
 	configLocal.userAuthenticationEnabled = ("${ATLAS_USER_AUTH_ENABLED}" === "true");
