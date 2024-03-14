@@ -38,6 +38,7 @@ define([], function () {
 	configLocal.defaultLocale = "${ATLAS_DEFAULT_LOCALE}";
 	configLocal.pollInterval = parseInt("${ATLAS_POLL_INTERVAL}");
 
+
 	if ("${ATLAS_SECURITY_WIN_PROVIDER_ENABLED}" === "true") {
 		configLocal.authProviders.push(openIdProvider = {
 			name: "${ATLAS_SECURITY_WIN_PROVIDER_NAME}",
