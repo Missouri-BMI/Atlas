@@ -39,11 +39,13 @@ LABEL org.opencontainers.image.source="https://github.com/OHDSI/Atlas"
 # URL where WebAPI can be queried by the client
 ENV USE_DYNAMIC_WEBAPI_URL="false"
 ENV DYNAMIC_WEBAPI_SUFFIX="/WebAPI/"
-ENV WEBAPI_URL="http://localhost:8080/WebAPI/"
+# ENV WEBAPI_URL="http://localhost:8080/WebAPI/"
+ENV WEBAPI_URL="https://ohdsi-webapi-dev.nextgenbmi.umsystem.edu/WebAPI/"
 ENV CONFIG_PATH="/etc/atlas/config-local.js"
 ENV ATLAS_INSTANCE_NAME="OHDSI"
 ENV ATLAS_COHORT_COMPARISON_RESULTS_ENABLED="false"
-ENV ATLAS_USER_AUTH_ENABLED="false"
+# ENV ATLAS_USER_AUTH_ENABLED="false"
+ENV ATLAS_USER_AUTH_ENABLED="true"
 ENV ATLAS_PLP_RESULTS_ENABLED="false"
 ENV ATLAS_CLEAR_LOCAL_STORAGE="false"
 ENV ATLAS_DISABLE_BROWSER_CHECK="false"
@@ -98,7 +100,7 @@ ENV ATLAS_SECURITY_GH_PROVIDER_URL="user/oauth/github"
 ENV ATLAS_SECURITY_GH_PROVIDER_AJAX="false"
 ENV ATLAS_SECURITY_GH_PROVIDER_ICON="fab fa-github"
 
-ENV ATLAS_SECURITY_DB_PROVIDER_ENABLED="false"
+ENV ATLAS_SECURITY_DB_PROVIDER_ENABLED="true"
 ENV ATLAS_SECURITY_DB_PROVIDER_NAME="DB"
 ENV ATLAS_SECURITY_DB_PROVIDER_URL="user/login/db"
 ENV ATLAS_SECURITY_DB_PROVIDER_AJAX="true"
@@ -126,7 +128,7 @@ ENV ATLAS_SECURITY_AD_PROVIDER_ICON="fa fa-cubes"
 ENV ATLAS_SECURITY_AD_PROVIDER_CREDFORM="true"
 
 # for existing broadsea implementations
-ENV ATLAS_SECURITY_PROVIDER_ENABLED="true"
+ENV ATLAS_SECURITY_PROVIDER_ENABLED="false"
 ENV ATLAS_SECURITY_PROVIDER_NAME="none"
 ENV ATLAS_SECURITY_PROVIDER_TYPE="none"
 ENV ATLAS_SECURITY_USE_AJAX="false"
@@ -137,9 +139,6 @@ ENV ATLAS_ENABLE_TANDCS="true"
 ENV ATLAS_ENABLE_PERSONCOUNT="true"
 ENV ATLAS_ENABLE_TAGGING_SECTION="false"
 ENV ATLAS_REFRESH_TOKEN_THRESHOLD="240"
-
-ENV WEBAPI_URL=https://ohdsi-webapi-dev.nextgenbmi.umsystem.edu/WebAPI/
-
 
 # Configure webserver
 COPY ./docker/nginx-default.conf /etc/nginx/conf.d/default.conf
@@ -158,4 +157,4 @@ COPY --from=builder /code/js /usr/share/nginx/html/atlas/js
 COPY --chown=101 docker/config-local.js /usr/share/nginx/html/atlas/js/config-local.js
 
 # DataQuality Dashboard
-COPY --chown=101 /DataQualityDashboard/www/ /usr/share/nginx/html/atlas/dashboard/
+# COPY --chown=101 /DataQualityDashboard/www/ /usr/share/nginx/html/atlas/dashboard/
