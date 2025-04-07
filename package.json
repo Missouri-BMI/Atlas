@@ -42,7 +42,7 @@
     "genversion": "2.2.0",
     "html-document": "0.8.1",
     "jest": "29.7.0",
-    "requirejs": "2.3.6",
+    "requirejs": "2.3.7"g,
     "rimraf": "2.6.2",
     "terser": "5.16.4"
   },
